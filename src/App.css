@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+/* -------------
+General 
+------------- */
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ }
+
+ body {
+  width: 100vw;
+  font-family: 'Montserrat', sans-serif;
+  background: #f6f5f7;
+ }
+
+ /* -------------
+Header 
+------------- */
+
+ header {
+  background-color: blueviolet;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 32px;
+  color: #EB2929;
+  font-weight: 900;
+}
+
+nav {
+  display: flex;
+  column-gap: 25px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.logged-in-menu {
+  position: relative;
+}
+
+.logged-in-menu:focus .dropdown, .logged-in-menu:active .dropdown {
+  transform: translate(0, 20px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.logged-in-menu .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.logged-in-menu .dropdown:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.05);
+  border-top: 6px solid #ffffff;
+  border-right: 6px solid #ffffff;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid transparent;
+  transform: rotate(-45deg);
+  mix-blend-mode: multiple;
+}
+.logged-in-menu .dropdown li {
+  z-index: 1;
+  position: relative;
+  background: #ffffff;
+  padding: 0 20px;
+  color: #666;
+}
+.logged-in-menu .dropdown li.active {
+  color: #5380f7;
+}
+.logged-in-menu .dropdown li:first-child {
+  border-radius: 4px 4px 0 0;
+}
+.logged-in-menu .dropdown li:last-child {
+  border-radius: 0 0 4px 4px;
+}
+.logged-in-menu .dropdown li:last-child a {
+  border-bottom: 0;
+}
+.logged-in-menu .dropdown a {
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 16px 0;
+  color: inherit;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+
+/* -------------
+Hero Section
+------------- */
+
+.hero-section {
+  height: 500px;
+  background-color: blueviolet;
+  background: url(https://i.insider.com/6270194e0983640018c0b65d?width=1200&format=jpeg) no-repeat;
+  background-size: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  color: #fff;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.8s;
+  opacity: 0.6;
+  background-color: black;
+  background-size: 100% 100%;
+}
+
+.hero-section .title {
+  z-index: 1;
+  font-size: 32px;
+}
+
+.hero-section .subtitle {
+  z-index: 1;
+  font-size: 32px;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.search-section input {
+  width: 400px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.hero-section .btn {
+  z-index: 1;
+}
+
+/* -------------
+Books List - Card 
+------------- */
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  margin: 30px;
+}
+
+.card {
+  max-width: 220px;
+  height: 300px;
+  border: 1px solid rgb(171, 171, 171);
+  position: relative;
+}
+
+.card-overlay-buttons {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.card-overlay-buttons button {
+  padding: 5px 5px;
+}
+
+
+.card:hover .card-img-top {
+  opacity: 0.3
+}
+
+.card:hover .card-overlay-buttons {
+  opacity: 1
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 780px) {
+  .cards-wrapper {
+    flex-direction: row;
+  }
+}
+
+/* -------------
+Book Details
+------------- */
+
+.details-CardContainer {
+  display: flex;
+  align-items: center;
+}
